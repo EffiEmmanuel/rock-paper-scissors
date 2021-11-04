@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* RESET / DEFAULT STYLE RULES */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* RULE SET FOR THE OVERALL PARENT CONTAINER */
+/* Did this because I did not want to add any more styles to my body element*/
+.container {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, #8080d7, #9098fd);
+    text-align: center;
+}
+
+/* RULE SET FOR THE Rock. Paper. Scissors TITLE AT THE TOP OF THE PAGE*/
+.game-title {
+    margin: 0;
+    color: white;
+}
+
+
+/* RULE SET FOR THE MAIN GAME BOARD THE WHITE CANVAS ON THE PAGE*/
+.game-board {
+    background-color: white;
+    margin: 10px 60px 0;
+    border-radius: 40px;
+    padding: 10px 30px;
+}
+
+/* THIS RULE SET PROVIDES PADDING FOR THE ELEMENTS IN THE GAME BOARD FOR UNIFORMITY */
+.game-container {
+    padding: 10px 50px;
+    font-size: 1.3em;
+}
+
+
+/* RULE SET FOR THE PLAYER vs CPU title*/
+/* Made this a flexbox so I could give them equal space between*/
+.player-vs-cpu {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+    justify-content: space-between;
+}
+
+
+/* RULE SET FOR the score board*/
+.score {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* RULE SET FOR THE SCORES*/
+.score p {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+
+/* RULE SET FOR THE GREY DISPLAY SCREEN*/
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    padding: 10px 40px;
+    margin: 20px 80px;
+    background-color: #e6e6e6;
+    text-align: center;
+}
+
+
+/* RULE SET FOR THE HINTS THAT COME UP INSIDE THE DISPLAY SCREEN*/
+.game-hints {
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* RULE SET FOR THE FOOTER - THE RESTART BUTTON, USER CONTROLS AND QUIT GAME BUTTON*/
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* RULE SET FOR THE USER CONTROLS PARENT CONTAINER*/
+.user-controls {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+/* RULE SET FOR THE INDIVIDUAL USER CONTROLS IMG PARENT*/
+.user-controls div {
+    margin: 0 50px;
+}
+
+/* RULE SET FOR THE ICONS INSIDE OF THE ROUND GREY USER CONTROL BUTTONS*/
+.user-controls img {
+    width: 50px;
+}
+
+/* RULE SET FOR THE ROUND GREY USER CONTROL BUTTONS*/
+.rock,
+.paper,
+.scissors {
+    margin: 10px;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+    padding: 10px 15px;
+    transition: background-color 1s;
+    cursor: pointer;
+}
+
+
+/* RULE SET FOR WHAT HAPPENS WHEN YOU HOVER OVER THE USER CONTROL BUTTONS*/
+.rock:hover,
+.paper:hover,
+.scissors:hover {
+    background-color: white;
+}
+
+
+/* RULE SET FOR THE TOOLTIP THAT FADES UP THE USER CONTROL BUTTON - ROCK*/
+.rock:before {
+    content: "Rock";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .6em;
+    text-align: center;
+    opacity: 0;
+    padding: 20px 7px;
+    transition: opacity 1s, padding 1s;
+}
+
+/* RULE SET FOR THE FADE EFFECT ON THE CIRCULAR BUTTON ITSELF - ROCK*/
+.rock:hover:before {
+    display: inline;
+    opacity: 1;
+    padding: 0px 7px;
+    transition: opacity 1s, padding 1s;
+}
+
+
+/* RULE SET FOR THE TOOLTIP THAT FADES UP THE USER CONTROL BUTTON - PAPER*/
+.paper:before {
+    content: "paper";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .6em;
+    text-align: center;
+    opacity: 0;
+    padding: 20px 7px;
+    transition: opacity 1s, padding 1s;
+}
+
+
+/* RULE SET FOR THE FADE EFFECT ON THE CIRCULAR BUTTON ITSELF - PAPER*/
+.paper:hover:before {
+    display: inline;
+    opacity: 1;
+    padding: 0px 7px;
+    transition: opacity 1s, padding 1s;
+}
+
+
+/* RULE SET FOR THE TOOLTIP THAT FADES UP THE USER CONTROL BUTTON - SCISSORS*/
+.scissors:before {
+    content: "scissors";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: .6em;
+    text-align: center;
+    opacity: 0;
+    padding: 20px 7px;
+    transition: opacity 1s, padding 1s;
+}
+
+
+/* RULE SET FOR THE FADE EFFECT ON THE CIRCULAR BUTTON ITSELF - PAPER*/
+.scissors:hover:before {
+    display: inline;
+    opacity: 1;
+    padding: 0px 7px;
+    transition: opacity 1s, padding 1s;
+}
+
+
+/* GENERIC RULE SET FOR THE RESTART AND QUIT GAME BUTTONS*/
+.button {
+    height: 50px;
+    width: 170px;
+    border: none;
+    box-shadow: none;
+    background: linear-gradient(45deg, #9098fd, #8080d7);
+    color: white;
+    font-size: 1em;
+    transition: box-shadow .5s;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 1px 1px 20px 3px rgba(128, 128, 215, .3);
+}
+
+
+
+/* RULE SET FOR THE NUMBER OF MOVES MADE BY THE USER AND MOBERS REMAINING CONTAINER*/
+.moves {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+/* RULE SET FOR THE TEXTS INSIDE THE .moves*/
+.moves p {
+    margin: 0;
+    padding: 15px 0 0;
+}
+
+
+/* MEDIA QUERY */
+@media (max-width: 1075px) {
+    .container {
+        height: 100%;
+    }
+    .game-board {
+        height: 100%;
+    }
+    /* .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    } */
+
+    .display {
+        width: 100%;
+        padding: 10px 0px;
+        margin: 20px 0px;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "controls"
+        "restart"
+        "end";
+        grid-gap: 20px;
+        text-align: center;
+    }
+
+    /* .restart, .user-controls, .end-game {
+        margin: 20px;
+    } */
+
+    .user-controls {
+        grid-area: controls;
+        position: relative;
+    }
+
+    .restart {
+        grid-area: restart;
+        margin: auto;
+    }
+
+    .end-game {
+        grid-area: end;
+        margin: auto;
+    }
+}
+
+
+
+/* MEDIA QUERY */
+@media (max-width: 819px) {
+    /* .rock, .paper.scissors {
+        width: 50px;
+        height: auto;
+    } */
+
+    .user-controls div {
+        margin: 0;
+    }
+}
+
+
+/* MEDIA QUERY */
+@media (max-width: 665px) {
+    .game-container {
+        padding: 10px 0px;
+    }
+
+    .player-vs-cpu {
+        padding: 0 30px;
+    }
+
+    .score {
+        padding: 0 30px;
+    }
+
+    .game-board {
+        padding: 10px 0;
+    } 
+
+    .user-controls {
+        padding: 0 30px;
+    }
+
+    .game-hints {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 469px) {
+    .game-board {
+        margin: 0;
+        border-radius: 0;
+        padding: 5px 0;
+        margin: 20px 0 0;
+    }
+
+
+}

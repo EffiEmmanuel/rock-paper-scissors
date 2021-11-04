@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>RPS | HOME</title>
+</head>
+
+<body>
+
+    <!--OVERALL CONTAINER-->
+    <div class="container">
+
+        <!--GAME TITLE-->
+        <h1 class="game-title">Rock. Paper. Scissors</h1>
+
+        <!--MAIN CONTAINER WITH WHITE BG-->
+        <div class="game-board">
+
+            <div class="game-container">
+                <!--SCORE BOARD CONTAINER-->
+                <div class="score-board">
+                    <div class="player-vs-cpu">
+                        <p>Player</p>
+                        <p>vs</p>
+                        <p>Cpu</p>
+                    </div>
+
+                    <div class="score">
+                        <p class="player-score">0</p>
+                        <p class="computer-score">0</p>
+                    </div>
+                </div>
+                <!--END SCORE-BOARD CONTAINER-->
+
+
+                <!--THE MAIN GAME DISPLAY CONTAINER-->
+                <div class="display">
+                    <p class="game-hints"></p>
+                </div>
+
+
+                <!--RESTART BUTTON, CONTROLS AND END GAME BUTTON CONTAINER-->
+                <div class="footer">
+                    <button type="reset" class="restart button">RESTART</button>
+                    <div class="user-controls">
+                        <div class="rock"><img src="images/icons8-hand-rock-96.png" alt="rock" id="rock"></div>
+                        <div class="paper"><img src="images/icons8-hand-96.png" alt="paper" id="paper"></div>
+                        <div class="scissors"><img src="images/icons8-hand-scissors-96.png" alt="scissors" id="scissors"></div>
+                    </div>
+
+                    <button type="reset" class="end-game button">QUIT GAME</button>
+                </div>
+
+            </div>
+
+        </div>
+        <!--END GAME-BOARD CONTAINER-->
+
+        <div class="moves">
+            <p class="counter">Moves remaining: &nbsp;<span id="counter">5</span></p>
+            <p class="moves">Moves: &nbsp;<span id="moves">0</span></p>
+        </div>
+
+    </div>
+    <!--END CONTAINER-->
+
+</body>
+
+</html>
